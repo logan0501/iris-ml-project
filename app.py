@@ -25,7 +25,7 @@ def submit():
             test_data = np.array(test_data)
             test_data = test_data.reshape(1,-1)
             print(test_data)
-            file = open('static\model\decisiontreemodel.pkl','rb')
+            file = open('static/model/decisiontreemodel.pkl','rb')
             trained_model = joblib.load(file)
             prediction = trained_model.predict(test_data)
             print(prediction)
