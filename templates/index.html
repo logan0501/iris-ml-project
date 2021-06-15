@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  
+    <title>Iris Classification</title>
+
+{% endblock %}
+
+{% block content %}
+<header>
+    <h1><img src="/static/css/iris.png" class="flower"></img> Iris Species Classifier</h1>
+    <h3>Let me help you to classify Iris Species. Provide me the following details (in cm).</h3>
+</header>
+<div class="container">  
+<form action="/submit" method="POST" class="grid">
+
+<section>
+    <p>Sepal Length</p>
+    <input  type="text" name="sl" required>
+</section>
+
+<section>
+<p>Sepal width</p>
+<input type="text" name="sw" required>
+</section>
+
+<section>
+    <p>Petal Length</p>
+    <input type="text" name="pl" required>
+</section>
+
+
+<section>
+    <p>Petal width</p>
+    <input type="text" name="pw" required>
+</section>
+
+<br>
+    <button type="submit">Classify</button>
+</form>
+</div>
+
+<section class="help">
+ 
+        <h1>What is Iris Classifier?</h1>
+ 
+    <article class="content">
+        <h3>A Machine Learning model to distinguish between different species of the Iris flower based on four measurements (features): sepal length, sepal width, petal length, and petal width.</h3>
+        <img src="/static/css/irisimage.png" alt="">
+    </article>
+    
+</section>
+<footer>
+    <p>Designed By Logan &copy;</p>
+     <span> <a href = "mailto: logan05012001@gmail.com"><img  class="flower email" src="/static/css/gmail.png" alt=""></a>
+     </span>
+</footer>
+{% endblock %}
